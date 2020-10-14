@@ -52,6 +52,18 @@ function validateMobileNumber()
 		echo "Mobile number is invalid"
 	fi
 }
+function validatePasswordCharacters()
+{
+	echo "Enter Password:"
+	read password
+	passwordPattern="^[a-zA-Z]{8}$"
+	if [[ $password =~ $passwordPattern ]]
+	then
+		echo "Password is Valid"
+	else
+		echo "Password is Invalid"
+	fi
+}
 
 main()
 {
@@ -59,5 +71,6 @@ validateFirstName
 validateLastName
 validateEmail
 validateMobileNumber
+validatePasswordCharacters
 }
 main
