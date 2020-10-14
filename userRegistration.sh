@@ -77,6 +77,19 @@ function validateAtleastOneUpperCase()
 	fi
 }
 
+function validateAlteastOneNumber()
+{
+	echo "Enter Password:"
+	read passwordNumber
+	pattern="^[A-Z0-9a-z]{8,}$"
+	if [[ $passwordNumber =~ $pattern ]]
+	then
+		echo "Password is Valid"
+	else
+		echo "Password is Invalid"
+	fi
+}
+
 function main()
 {
 validateFirstName
@@ -85,5 +98,6 @@ validateEmail
 validateMobileNumber
 validatePasswordCharacters
 validateAtleastOneUpperCase
+validateAlteastOneNumber
 }
 main
