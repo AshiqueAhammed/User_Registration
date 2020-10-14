@@ -32,7 +32,7 @@ function validateEmail()
 {
 	echo "Enter your Email"
 	read email
-	emailpattern="^[A-Z0-9a-z.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+	emailpattern="^([A-Z]+)([0-9]+)[@#$%^&*]{1}[0-9a-zA-Z\@\#\$\%\^\&\*]{5,20}$"
 	if [[ $email =~ $emailpattern ]]
 	then
 		echo "Email is valid"
