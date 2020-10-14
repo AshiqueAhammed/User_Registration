@@ -90,6 +90,18 @@ function validateAlteastOneNumber()
 	fi
 }
 
+function validateSpecialCharacters()
+{
+	echo "Enter Password:"
+	read password
+	if [[ ${#password} -ge 8 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* && "$password" == *[[@#^*]]{1}* ]]
+	then
+		echo "Password is Valid"
+	else
+		echo "Password is Invalid"
+	fi
+}
+
 function main()
 {
 validateFirstName
@@ -99,5 +111,6 @@ validateMobileNumber
 validatePasswordCharacters
 validateAtleastOneUpperCase
 validateAlteastOneNumber
+validateSpecialCharacters
 }
 main
