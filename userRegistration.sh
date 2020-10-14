@@ -65,12 +65,25 @@ function validatePasswordCharacters()
 	fi
 }
 
-main()
+function validateAtleastOneUpperCase()
+{
+	echo "Enter Password:"
+	read password
+	if [[ ${#password} -ge 6 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* ]]
+	then
+		echo "Password is Valid"
+	else
+		echo "Password is Invalid"
+	fi
+}
+
+function main()
 {
 validateFirstName
 validateLastName
 validateEmail
 validateMobileNumber
 validatePasswordCharacters
+validateAtleastOneUpperCase
 }
 main
