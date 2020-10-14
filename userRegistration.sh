@@ -40,11 +40,24 @@ function validateEmail()
 		echo "Email is invalid"
 	fi
 }
+function validateMobileNumber()
+{
+	echo "Enter your Mobile Number"
+	read number
+	numberpattern="^[0-9]{1,}[[:space:]][0-9]{10}$"
+	if [[ $number =~ $numberpattern ]]
+	then
+		echo "Mobile Number is valid"
+	else
+		echo "Mobile number is invalid"
+	fi
+}
 
 main()
 {
 validateFirstName
 validateLastName
 validateEmail
+validateMobileNumber
 }
 main
