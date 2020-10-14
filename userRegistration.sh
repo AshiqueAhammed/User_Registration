@@ -52,49 +52,12 @@ function validateMobileNumber()
 		echo "Mobile number is invalid"
 	fi
 }
-function validatePasswordCharacters()
+function validatePassword()
 {
 	echo "Enter Password:"
 	read password
-	passwordPattern="^[a-zA-Z]{8}$"
+	passwordPattern="^([A-Z]+)([0-9]+)[@#$%^&*]{1}[0-9a-zA-Z\@\#\$\%\^\&\*]{5,20}$"
 	if [[ $password =~ $passwordPattern ]]
-	then
-		echo "Password is Valid"
-	else
-		echo "Password is Invalid"
-	fi
-}
-
-function validateAtleastOneUpperCase()
-{
-	echo "Enter Password:"
-	read password
-	if [[ ${#password} -ge 6 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* ]]
-	then
-		echo "Password is Valid"
-	else
-		echo "Password is Invalid"
-	fi
-}
-
-function validateAlteastOneNumber()
-{
-	echo "Enter Password:"
-	read passwordNumber
-	pattern="^[A-Z0-9a-z]{8,}$"
-	if [[ $passwordNumber =~ $pattern ]]
-	then
-		echo "Password is Valid"
-	else
-		echo "Password is Invalid"
-	fi
-}
-
-function validateSpecialCharacters()
-{
-	echo "Enter Password:"
-	read password
-	if [[ ${#password} -ge 8 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* && "$password" == *[[@#^*]]{1}* ]]
 	then
 		echo "Password is Valid"
 	else
@@ -108,9 +71,6 @@ validateFirstName
 validateLastName
 validateEmail
 validateMobileNumber
-validatePasswordCharacters
-validateAtleastOneUpperCase
-validateAlteastOneNumber
-validateSpecialCharacters
+validatePassword
 }
 main
