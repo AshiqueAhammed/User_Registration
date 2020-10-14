@@ -28,10 +28,23 @@ function validateLastName()
 	fi
 }
 
+function validateEmail()
+{
+	echo "Enter your Email"
+	read email
+	emailpattern="^[A-Z0-9a-z.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+	if [[ $email =~ $emailpattern ]]
+	then
+		echo "Email is valid"
+	else
+		echo "Email is invalid"
+	fi
+}
 
 main()
 {
 validateFirstName
 validateLastName
+validateEmail
 }
 main
